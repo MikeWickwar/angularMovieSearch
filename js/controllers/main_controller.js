@@ -7,12 +7,16 @@ app.controller('MainController', ['$scope','$http', function ($scope, $http) {
 
     $http.get('http://www.omdbapi.com/?s='+$scope.searchme+'&y=&plot=short&r=json').then(function(movieSearch){
       console.log(movieSearch);
-      $scope.movie = movieSearch.data;
-      $scope.movieId = movieSearch.data.imdbID;
-      $http.get('http://www.omdbapi.com/?i='+$scope.movieId+'&y=&plot=short&r=json').then(function(idSearch){
-        console.log(idSearch);
-        $scope.movieId = idSearch.data
-      });
+      $scope.movies = []
+      movieSearch.data.Search.forEach(function (movie) {
+        $scope.movies.push(movie)
+
+      })
+      console.log($scope.movies);
+        // $http.get('http://www.omdbapi.com/?i='+$scope.movieId+'&y=&plot=short&r=json').then(function(idSearch){
+        //   console.log(idSearch);
+        //   $scope.movieId = idSearch.data
+        // });
     });
   }
 

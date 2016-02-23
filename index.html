@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="/css/index.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body ng-controller="MainController">
-    {{3*9}}
-    {{movie}}
-    {{movieId}}
     <div class="searchform">
       <form name='newPostForm' class="col-lg-10" ng-submit="searchMovies()">
         <div class="form-group">
@@ -19,6 +16,15 @@
         </div>
       </form>
   </div>
+  <main class="main">
+    <div class="postdiv col-lg-10" ng-repeat = 'movie in movies'>
+      <h1>{{movie.Title}}</h1>
+    </div>
+  </main>
+
+  {{3*9}}
+  {{movies}}
+  {{movieId}}
     <script type="text/javascript" src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
