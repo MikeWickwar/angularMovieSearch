@@ -1,9 +1,20 @@
 var app = angular.module('movieSearch', ['ngRoute']);
 
-app.controller('MainController', ['$scope','$http', function ($scope, $http) {
-  console.log('made it to main control');
-  $http.get('http://www.omdbapi.com/?t=zoolander&y=&plot=short&r=json').then(function(data){
-    console.log(data);
-    $scope.movie = data.data;
-    });
-}])
+app.config(function($routeProvider) {
+    $routeProvider
+      .when('/', {
+        controller: 'MainController',
+        template: '<h1>You have reached the main controller</h1>'
+      })
+      .when('/goodbye', {
+        templateUrl: './js/partials/goodbye.html',
+        controller: 'GoodByeController'
+      })
+      .when('/hello', {
+        templateUrl: './js/partials/hello.html',
+        controller: 'HelloController'
+      })
+      .otherwise({
+        template: '<div><h1>No Page Located Here</h1></div>'
+      })
+});

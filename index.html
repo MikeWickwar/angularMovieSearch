@@ -9,10 +9,20 @@
   <body ng-controller="MainController">
     {{3*9}}
     {{movie}}
+    <div class="searchform">
+      <form name='newPostForm' class="col-lg-10" ng-submit="searchMovies()">
+        <div class="form-group">
+          <h5>Please enter a movie you would like to search...</h5>
+            <input class="form-control" type="text" name="search" ng-model="title" placeholder="Search">
+          <button type="submit">search it!</button>
+        </div>
+      </form>
+  </div>
     <script type="text/javascript" src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/controllers/main_controller.js"></script>
   </body>
 </html>
