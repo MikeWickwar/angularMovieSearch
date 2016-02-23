@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="/css/index.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body ng-controller="MainController">
-    <div class="searchform">
-      <form name='newPostForm' class="col-lg-10" ng-submit="searchMovies()">
-        <div class="form-group">
-          <h5>Please enter a movie you would like to search...</h5>
-            <input class="form-control" type="text" name="search" ng-model="title" placeholder="Search">
-          <button type="submit">search it!</button>
-        </div>
-      </form>
-  </div>
+    <header>
+      <div class="searchform">
+        <form name='newPostForm' class="col-lg-10" ng-submit="searchMovies()">
+          <div class="form-group">
+            <h5>Please enter a movie you would like to search...</h5>
+              <input class="form-control" type="text" name="search" ng-model="title" placeholder="Search">
+            <a href="/#/movies/show"><button type="submit">search it!</button></a>
+          </div>
+        </form>
+      </div>
+    </header>
   <main class="main">
     <div class="postdiv col-lg-10" ng-repeat = 'movie in movies'>
-      <a href="/#/movie/{{movie.imdbID}}"><h1>{{movie.Title}}</h1></a>
+      <a href="/#/movies/{{movie.imdbID}}"><h1>{{movie.Title}}</h1></a>
     </div>
+
   </main>
 
   {{3*9}}
