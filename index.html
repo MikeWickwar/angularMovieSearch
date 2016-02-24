@@ -13,7 +13,7 @@
           <div class="form-group">
             <h5>Please enter a movie you would like to search...</h5>
               <input class="form-control" type="text" name="search" ng-model="title" placeholder="Search">
-            <a href="/#/movies/show"><button type="submit">search it!</button></a>
+            <a href="/#/movies/show"><button type="submit" ng-click='searchMovies()'>search it!</button></a>
           </div>
         </form>
       </div>
@@ -21,11 +21,7 @@
     <div ng-view>
 
     </div>
-  <main class="main">
-    <div class="postdiv col-lg-10" ng-repeat = 'movie in movies'>
-      <a href="/#/movies/{{movie.imdbID}}" ng-click="searchSingleMovie()"><h1>{{movie.Title}}</h1></a>
-    </div>
-  </main>
+
 
   {{3*9}}
   {{movies}}

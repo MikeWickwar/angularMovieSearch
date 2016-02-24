@@ -2,6 +2,9 @@ var app = angular.module('movieSearch', ['ngRoute']);
 
 app.config(function($routeProvider) {
     $routeProvider
+      .when('/', {
+        controller: 'MainController'
+      })
       .when('/movies/show', {
         templateUrl: './js/partials/showmovies.html',
         controller: 'MainController'
