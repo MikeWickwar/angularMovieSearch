@@ -2,11 +2,7 @@ app.controller('singleMovieController', ['$scope','$http', function ($scope, $ht
   console.log('made it to single movie control');
 
   $scope.searchSingleMovies = function (movie) {
-    $scope.searchme = $scope.title;
-
-    $http.get('http://www.omdbapi.com/?t='+$scope.searchme+'&y=&plot=short&r=json').then(function(movieSearch){
-      console.log(movieSearch);
-      $scope.movies = []
+    $http.get('http://www.omdbapi.com/?t='+$scope.movieid+'&y=&plot=short&r=json').then(function(movieSearch){
       $scope.actors = movieSearch.data.Actors
     });
   }
