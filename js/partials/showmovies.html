@@ -2,6 +2,5 @@
   <div class="postdiv col-lg-5" ng-repeat = 'movie in movies'>
     <a ng-click="searchSingleMovies({{movie}})" href="/#/movies/{{movie.imdbID}}"><h1>{{movie.Title}}</h1></a>
     <h3>Year: {{movie.Year}}</h3>
-    <h1 ng-model="movieid" ng-class="movieid" ng-hide="true">{{movie.imdbID}}</h1>
   </div>
 </main>

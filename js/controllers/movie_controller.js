@@ -1,17 +1,12 @@
 app.controller('singleMovieController', ['$scope','$http','$route', function ($scope, $http, $route) {
   console.log('made it to single movie control');
-  console.log($route);
 
   $scope.searchSingleMovies = function () {
-    $http.get('http://www.omdbapi.com/?i='+$route.current.params.id+'&y=&plot=short&r=json').then(function(movieSearch){
-      var results = movieSearch.data
-      console.log(results);
-      $scope.title = results.Title
-      $scope.actors = results.Actors
-      $scope.poster = results.Poster
-      $scope.year = results.Year
-
+    $http.get('http://www.omdbapi.com/?i='+$route.current.params.id+'&y=&plot=full&r=json').then(function(movieSearch){
+      $scope.movieinfo = movieSearch.data
+      $scope.title = movieSearch.data.Title
+      console.log($scope.movieinfo);
     });
   }
-  $scope.movieinfo = $scope.searchSingleMovies();
+  $scope.searchTrigger = $scope.searchSingleMovies();
 }])

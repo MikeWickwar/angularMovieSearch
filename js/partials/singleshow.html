@@ -1,5 +1,5 @@
 <main>
-  <h1>{{movieinfo.title}}</h1>
-  <h1>{{actors}}</h1>
+  <h1>{{title}}</h1>
   <!-- <img src="{{poster}}" alt="" /> -->
+  <h1 ng-repeat="(key, movie) in movieinfo">{{key}} {{movie}}</h1>
 </main>
