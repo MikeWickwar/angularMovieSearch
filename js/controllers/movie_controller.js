@@ -7,7 +7,7 @@ app.controller('singleMovieController', ['$scope','$http','$route', function ($s
       $scope.title = movieSearch.data.Title
       $scope.actors = movieSearch.data.Actors
       $scope.plot = movieSearch.data.Plot
-      $scope.poster = movieSearch.data.poster
+      $scope.poster = movieSearch.data.Poster
       delete $scope.movieinfo.Type
       delete $scope.movieinfo.Response
       delete $scope.movieinfo.Title
