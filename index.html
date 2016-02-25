@@ -7,20 +7,8 @@
     <link rel="stylesheet" href="/css/index.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body ng-controller="MainController">
-      <header class="col-lg-12">
-        <h1>Angular OMDb API Search</h1>
-        <div class="searchform">
-          <form name='newPostForm' class="col-lg-12">
-            <div class="form-group">
-              <h5>Please enter a movie you would like to search...</h5>
-                <input class="form-control" type="text" name="search" ng-model="title" placeholder="Search">
-              <a href="/#/movies/show"><button class="btn" type="submit" ng-click='searchMovies()'>search it!</button></a>
-            </div>
-          </form>
-        </div>
-      </header>
+    <ms-header></ms-header>
     <div ng-view class="body">
-
     </div>
     <script type="text/javascript" src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
@@ -29,5 +17,6 @@
     <script type="text/javascript" src="./js/app.js"></script>
     <script type="text/javascript" src="./js/controllers/main_controller.js"></script>
     <script type="text/javascript" src="./js/controllers/movie_controller.js"></script>
+    <script type="text/javascript" src="./js/directives/main.js"></script>
   </body>
 </html>
