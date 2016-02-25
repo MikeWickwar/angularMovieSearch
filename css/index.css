@@ -18,6 +18,9 @@ main{
   justify-content: space-around;
   align-content: center;
 }
+p{
+  font-size: 110%;
+}
 .body{
   display: flex;
   justify-content: center;
@@ -33,4 +36,13 @@ main{
 .postdiv{
   border: 1px solid black;
   margin-top: 3%;
+}
+.container{
+  margin-left: 10%;
+}
+.keys{
+  margin: 0
+}
+.grey{
+  color: #a9a9a9
 }
